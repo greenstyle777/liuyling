@@ -1,0 +1,2322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_061dcd5e056c670199b01d534cf12576 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-dvf/0.3.0/leaflet-dvf.markers.min.js"></script>
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+            top: 10px; left: 50px; 
+            background-color: rgba(255,248,240,0.95); 
+            border: 2px solid #8b7355; 
+            border-radius: 6px; 
+            padding: 12px 15px;
+            z-index: 9999;
+            font-family: 'SimSun', 'Microsoft YaHei', serif;
+            box-shadow: 3px 3px 8px rgba(0,0,0,0.3);">
+    <div style="font-size: 16px; font-weight: bold; color: #4a3728; margin-bottom: 10px; border-bottom: 1px solid #c4a77d; padding-bottom: 6px;">
+        🗻 中国世界地质公园分布图
+        <span style="font-size: 12px; color: #8b6914; font-weight: normal;">(2026年·51处)</span>
+    </div>
+    <div style="font-size: 12px; line-height: 1.8; color: #5d4e37;">
+        <div style="margin-bottom: 6px;">
+            <span style="display:inline-block; width:10px; height:10px; background:#e67e22; border-radius:50%; margin-right:8px; border:1px solid #a0522d;"></span>
+            <b>2004-2009</b> <span style="color:#888;">首批认定 · 8处</span>
+        </div>
+        <div style="margin-bottom: 6px;">
+            <span style="display:inline-block; width:10px; height:10px; background:#27ae60; border-radius:50%; margin-right:8px; border:1px solid #1e8449;"></span>
+            <b>2010-2019</b> <span style="color:#888;">快速发展 · 24处</span>
+        </div>
+        <div style="margin-bottom: 6px;">
+            <span style="display:inline-block; width:10px; height:10px; background:#2980b9; border-radius:50%; margin-right:8px; border:1px solid #1a5276;"></span>
+            <b>2020-2025</b> <span style="color:#888;">近期新增 · 11处</span>
+        </div>
+        <div>
+            <span style="display:inline-block; width:10px; height:10px; background:#c0392b; clip-path:polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); margin-right:8px;"></span>
+            <b>2026</b> <span style="color:#888; font-weight:bold;">今年新增 · 8处</span>
+        </div>
+    </div>
+</div>
+    
+            <div class="folium-map" id="map_061dcd5e056c670199b01d534cf12576" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_061dcd5e056c670199b01d534cf12576 = L.map(
+                "map_061dcd5e056c670199b01d534cf12576",
+                {
+                    center: [35.0, 105.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+  "name": "CartoDB Light",
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cb3f49f9b4c14d5af3f5b996aeeaa1c3 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_cb3f49f9b4c14d5af3f5b996aeeaa1c3.addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var tile_layer_770b9dc189d7da6e3788bdf1aa5e56ef = L.tileLayer(
+                "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 17,
+  "maxNativeZoom": 17,
+  "noWrap": false,
+  "attribution": "Map data: \u0026copy; OpenStreetMap contributors, SRTM | Map style: \u0026copy; OpenTopoMap (CC-BY-SA)",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_770b9dc189d7da6e3788bdf1aa5e56ef.addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var tile_layer_06b715a828eb8985d439d4794fe756af = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 16,
+  "maxNativeZoom": 16,
+  "noWrap": false,
+  "attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e \u0026mdash; Map data \u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_06b715a828eb8985d439d4794fe756af.addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var circle_marker_ce1b14f11b381905216d9a8231d6cc47 = L.circleMarker(
+                [30.1333, 118.1667],
+                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_09f10b4119ceb1af4aa3a81fbe1b4a40 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_2e3709eb08c6f9e967cbbf6e00f80966 = $(`<div id="html_2e3709eb08c6f9e967cbbf6e00f80966" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>黄山</b><br>申报年份：2004<br>批次：2004-2009</div></div>`)[0];
+                popup_09f10b4119ceb1af4aa3a81fbe1b4a40.setContent(html_2e3709eb08c6f9e967cbbf6e00f80966);
+            
+        
+
+        circle_marker_ce1b14f11b381905216d9a8231d6cc47.bindPopup(popup_09f10b4119ceb1af4aa3a81fbe1b4a40)
+        ;
+
+        
+    
+    
+            var marker_184cdccaa85d2692400d2972d07e6920 = L.marker(
+                [30.1333, 118.1667],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_cc174d473a4ca018b9925023788f9930 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u9ec4\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_184cdccaa85d2692400d2972d07e6920.setIcon(div_icon_cc174d473a4ca018b9925023788f9930);
+            
+    
+            var circle_marker_496c63fa22c2b28b7de6cb2077a3ab80 = L.circleMarker(
+                [30.4833, 117.8333],
+                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_f87ed59816a9939b82ed83bb7aef0652 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_3d5497d943a3ef6ae8e83e4629229c20 = $(`<div id="html_3d5497d943a3ef6ae8e83e4629229c20" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>九华山</b><br>申报年份：2006<br>批次：2004-2009</div></div>`)[0];
+                popup_f87ed59816a9939b82ed83bb7aef0652.setContent(html_3d5497d943a3ef6ae8e83e4629229c20);
+            
+        
+
+        circle_marker_496c63fa22c2b28b7de6cb2077a3ab80.bindPopup(popup_f87ed59816a9939b82ed83bb7aef0652)
+        ;
+
+        
+    
+    
+            var marker_3e3706065ceba30deeaa585647334733 = L.marker(
+                [30.4833, 117.8333],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_d04f033deb708f99f5d2754e5c1c88db = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u4e5d\u534e\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_3e3706065ceba30deeaa585647334733.setIcon(div_icon_d04f033deb708f99f5d2754e5c1c88db);
+            
+    
+            var circle_marker_8c61629abd19e776931cbc61ea2bb653 = L.circleMarker(
+                [30.7167, 116.5167],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_5190a273959dfd86cb208b95e597e55f = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_697de8e11f5393c0374265e6e54f876e = $(`<div id="html_697de8e11f5393c0374265e6e54f876e" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>天柱山</b><br>申报年份：2011<br>批次：2010-2019</div></div>`)[0];
+                popup_5190a273959dfd86cb208b95e597e55f.setContent(html_697de8e11f5393c0374265e6e54f876e);
+            
+        
+
+        circle_marker_8c61629abd19e776931cbc61ea2bb653.bindPopup(popup_5190a273959dfd86cb208b95e597e55f)
+        ;
+
+        
+    
+    
+            var marker_75d05eecd7be038ac41f4023de09840d = L.marker(
+                [30.7167, 116.5167],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_a4449d595bc12320af390590431ac073 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u5929\u67f1\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_75d05eecd7be038ac41f4023de09840d.setIcon(div_icon_a4449d595bc12320af390590431ac073);
+            
+    
+            var circle_marker_ad930147e9a86483de6100c08c4fc380 = L.circleMarker(
+                [39.75, 115.9667],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_ad0e2f06d33d40424541456ffa1e8e25 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_6afe876c0b34a5bc1a903074edf69ee9 = $(`<div id="html_6afe876c0b34a5bc1a903074edf69ee9" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>房山</b><br>申报年份：2010<br>批次：2010-2019</div></div>`)[0];
+                popup_ad0e2f06d33d40424541456ffa1e8e25.setContent(html_6afe876c0b34a5bc1a903074edf69ee9);
+            
+        
+
+        circle_marker_ad930147e9a86483de6100c08c4fc380.bindPopup(popup_ad0e2f06d33d40424541456ffa1e8e25)
+        ;
+
+        
+    
+    
+            var marker_d8fb0463340fa2885130c8721f5d479b = L.marker(
+                [39.75, 115.9667],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_69afe69aff74ff3e874143db2fbe2419 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u623f\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_d8fb0463340fa2885130c8721f5d479b.setIcon(div_icon_69afe69aff74ff3e874143db2fbe2419);
+            
+    
+            var circle_marker_a3b98dadcf45af5b411debfe9269514d = L.circleMarker(
+                [40.4667, 115.9667],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_3cbd39233be25c5ff3669645cb7826fe = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_1033a1a829af8d2d990269908ef27c14 = $(`<div id="html_1033a1a829af8d2d990269908ef27c14" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>延庆</b><br>申报年份：2013<br>批次：2010-2019</div></div>`)[0];
+                popup_3cbd39233be25c5ff3669645cb7826fe.setContent(html_1033a1a829af8d2d990269908ef27c14);
+            
+        
+
+        circle_marker_a3b98dadcf45af5b411debfe9269514d.bindPopup(popup_3cbd39233be25c5ff3669645cb7826fe)
+        ;
+
+        
+    
+    
+            var marker_3048a2fb3939211473aa1a623db4f957 = L.marker(
+                [40.4667, 115.9667],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_3e085b98994bccda6976be05ea85fe58 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u5ef6\u5e86\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_3048a2fb3939211473aa1a623db4f957.setIcon(div_icon_3e085b98994bccda6976be05ea85fe58);
+            
+    
+            var circle_marker_2fb7eff003dfeeea109e0d1e6ef71e8e = L.circleMarker(
+                [26.9, 117.1667],
+                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_31a2219e81403483c25742b4c7b03a8c = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_6fb799297835510bd1c5730f304628d1 = $(`<div id="html_6fb799297835510bd1c5730f304628d1" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>泰宁</b><br>申报年份：2005<br>批次：2004-2009</div></div>`)[0];
+                popup_31a2219e81403483c25742b4c7b03a8c.setContent(html_6fb799297835510bd1c5730f304628d1);
+            
+        
+
+        circle_marker_2fb7eff003dfeeea109e0d1e6ef71e8e.bindPopup(popup_31a2219e81403483c25742b4c7b03a8c)
+        ;
+
+        
+    
+    
+            var marker_2098c20a9c2e516b5044831eb463fa28 = L.marker(
+                [26.9, 117.1667],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_cace703bc130fd439a4844ef3937f1f1 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u6cf0\u5b81\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_2098c20a9c2e516b5044831eb463fa28.setIcon(div_icon_cace703bc130fd439a4844ef3937f1f1);
+            
+    
+            var circle_marker_15d8e38f932ad4a67de9f124d300b7fc = L.circleMarker(
+                [26.65, 119.55],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_19f50b596afbd3929918f09bbf15dd61 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_d876e340f005b814bf14d3a4eeb76c95 = $(`<div id="html_d876e340f005b814bf14d3a4eeb76c95" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>宁德</b><br>申报年份：2010<br>批次：2010-2019</div></div>`)[0];
+                popup_19f50b596afbd3929918f09bbf15dd61.setContent(html_d876e340f005b814bf14d3a4eeb76c95);
+            
+        
+
+        circle_marker_15d8e38f932ad4a67de9f124d300b7fc.bindPopup(popup_19f50b596afbd3929918f09bbf15dd61)
+        ;
+
+        
+    
+    
+            var marker_571c8393fe0c9b1c423a7c05091becdc = L.marker(
+                [26.65, 119.55],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_26674de28bb64b94849197d1c7313420 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u5b81\u5fb7\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_571c8393fe0c9b1c423a7c05091becdc.setIcon(div_icon_26674de28bb64b94849197d1c7313420);
+            
+    
+            var circle_marker_5b4cf70e85d66cdcb47270c0184f33bd = L.circleMarker(
+                [25.0833, 117.0167],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_4c7c10549b55519003cff2dc866f2eaf = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_363fe3c3a6381ff5763fd3f055ca90d7 = $(`<div id="html_363fe3c3a6381ff5763fd3f055ca90d7" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>龙岩</b><br>申报年份：2010<br>批次：2010-2019</div></div>`)[0];
+                popup_4c7c10549b55519003cff2dc866f2eaf.setContent(html_363fe3c3a6381ff5763fd3f055ca90d7);
+            
+        
+
+        circle_marker_5b4cf70e85d66cdcb47270c0184f33bd.bindPopup(popup_4c7c10549b55519003cff2dc866f2eaf)
+        ;
+
+        
+    
+    
+            var marker_6bb17676a1ffd88b1e0831aee8e659b2 = L.marker(
+                [25.0833, 117.0167],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_093168876c284f8725a0d5d2e02c2c6d = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u9f99\u5ca9\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_6bb17676a1ffd88b1e0831aee8e659b2.setIcon(div_icon_093168876c284f8725a0d5d2e02c2c6d);
+            
+    
+            var circle_marker_9855e1bcdb5f90d804fad3ef5555dea7 = L.circleMarker(
+                [24.85, 113.5833],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_c3aa3eca655d9158bfcaa9580118382b = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_d457ef14b14b1ff058acbc572364c7f2 = $(`<div id="html_d457ef14b14b1ff058acbc572364c7f2" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>丹霞山</b><br>申报年份：2010<br>批次：2010-2019</div></div>`)[0];
+                popup_c3aa3eca655d9158bfcaa9580118382b.setContent(html_d457ef14b14b1ff058acbc572364c7f2);
+            
+        
+
+        circle_marker_9855e1bcdb5f90d804fad3ef5555dea7.bindPopup(popup_c3aa3eca655d9158bfcaa9580118382b)
+        ;
+
+        
+    
+    
+            var marker_f62473923d948612f56d37c896347902 = L.marker(
+                [24.85, 113.5833],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_c27d9fee1256212ed6939b9b44551ad6 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u4e39\u971e\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_f62473923d948612f56d37c896347902.setIcon(div_icon_c27d9fee1256212ed6939b9b44551ad6);
+            
+    
+            var circle_marker_c77e6ea65c40eeecc786206ebe21b257 = L.circleMarker(
+                [20.0333, 110.3167],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_a9d7d5d697a85fedc0b671c129982afd = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_bb46e0a9638f0f8ca0eaae79593a0bb4 = $(`<div id="html_bb46e0a9638f0f8ca0eaae79593a0bb4" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>雷琼</b><br>申报年份：2012<br>批次：2010-2019</div></div>`)[0];
+                popup_a9d7d5d697a85fedc0b671c129982afd.setContent(html_bb46e0a9638f0f8ca0eaae79593a0bb4);
+            
+        
+
+        circle_marker_c77e6ea65c40eeecc786206ebe21b257.bindPopup(popup_a9d7d5d697a85fedc0b671c129982afd)
+        ;
+
+        
+    
+    
+            var marker_9a061a138caa6709f912593c8291432d = L.marker(
+                [20.0333, 110.3167],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_fce74d64987bcbfabb0e945f88afda8a = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u96f7\u743c\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_9a061a138caa6709f912593c8291432d.setIcon(div_icon_fce74d64987bcbfabb0e945f88afda8a);
+            
+    
+            var circle_marker_3616ce901115117c831c448277162a9b = L.circleMarker(
+                [24.75, 106.75],
+                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_d8f284867d67e939c25d7f44e7361d5d = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_1f9ea5ecaf52a70d24166a44ee92556c = $(`<div id="html_1f9ea5ecaf52a70d24166a44ee92556c" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>乐业-凤山</b><br>申报年份：2008<br>批次：2004-2009</div></div>`)[0];
+                popup_d8f284867d67e939c25d7f44e7361d5d.setContent(html_1f9ea5ecaf52a70d24166a44ee92556c);
+            
+        
+
+        circle_marker_3616ce901115117c831c448277162a9b.bindPopup(popup_d8f284867d67e939c25d7f44e7361d5d)
+        ;
+
+        
+    
+    
+            var marker_5d4ec85d0529bf9ab0497a168cf4c5ad = L.marker(
+                [24.75, 106.75],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_4437819ecc262be6c9cbe93648a9cda7 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u4e50\u4e1a\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_5d4ec85d0529bf9ab0497a168cf4c5ad.setIcon(div_icon_4437819ecc262be6c9cbe93648a9cda7);
+            
+    
+            var circle_marker_726bc799b349794ac9baf0512495a2ee = L.circleMarker(
+                [26.7, 105.7667],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_bebfe88d19d9ad1000695f9a2928fcfe = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_804d902b91a604e852d5dd4a621aca2e = $(`<div id="html_804d902b91a604e852d5dd4a621aca2e" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>织金洞</b><br>申报年份：2015<br>批次：2010-2019</div></div>`)[0];
+                popup_bebfe88d19d9ad1000695f9a2928fcfe.setContent(html_804d902b91a604e852d5dd4a621aca2e);
+            
+        
+
+        circle_marker_726bc799b349794ac9baf0512495a2ee.bindPopup(popup_bebfe88d19d9ad1000695f9a2928fcfe)
+        ;
+
+        
+    
+    
+            var marker_3e6d6a92e6da87a52a51755c65d3339a = L.marker(
+                [26.7, 105.7667],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_dc1e9ea6ded5f6285ec48e9056b8c53a = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u7ec7\u91d1\u6d1e\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_3e6d6a92e6da87a52a51755c65d3339a.setIcon(div_icon_dc1e9ea6ded5f6285ec48e9056b8c53a);
+            
+    
+            var circle_marker_6794d34dcd1bee187949a3b0b0aa3628 = L.circleMarker(
+                [25.0833, 104.9],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_8ccf05a8536036e5630c5c83aa4d4e3d = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_effc24ebb6deb96e903aa23ee166babf = $(`<div id="html_effc24ebb6deb96e903aa23ee166babf" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>兴义</b><br>申报年份：2015<br>批次：2010-2019</div></div>`)[0];
+                popup_8ccf05a8536036e5630c5c83aa4d4e3d.setContent(html_effc24ebb6deb96e903aa23ee166babf);
+            
+        
+
+        circle_marker_6794d34dcd1bee187949a3b0b0aa3628.bindPopup(popup_8ccf05a8536036e5630c5c83aa4d4e3d)
+        ;
+
+        
+    
+    
+            var marker_96448b93a0226b8e4ee0322fc1007551 = L.marker(
+                [25.0833, 104.9],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_81c5a5380f0671e5515f35b56e1aeafb = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u5174\u4e49\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_96448b93a0226b8e4ee0322fc1007551.setIcon(div_icon_81c5a5380f0671e5515f35b56e1aeafb);
+            
+    
+            var circle_marker_39fabfb9a37d3cac840c102e6d261a02 = L.circleMarker(
+                [35.45, 113.3833],
+                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_989d71232d05696e1f788cb220cee1b7 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_6192cde0ac31e34cd684173af5e8e0e5 = $(`<div id="html_6192cde0ac31e34cd684173af5e8e0e5" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>云台山</b><br>申报年份：2004<br>批次：2004-2009</div></div>`)[0];
+                popup_989d71232d05696e1f788cb220cee1b7.setContent(html_6192cde0ac31e34cd684173af5e8e0e5);
+            
+        
+
+        circle_marker_39fabfb9a37d3cac840c102e6d261a02.bindPopup(popup_989d71232d05696e1f788cb220cee1b7)
+        ;
+
+        
+    
+    
+            var marker_a9597430ee3b39bd81b6d3902732415a = L.marker(
+                [35.45, 113.3833],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_7a059b222ef0c91c799a5b35ccc3b10a = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u4e91\u53f0\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_a9597430ee3b39bd81b6d3902732415a.setIcon(div_icon_7a059b222ef0c91c799a5b35ccc3b10a);
+            
+    
+            var circle_marker_5a1d95ebdb62bdd80b154bc63aabfe5a = L.circleMarker(
+                [34.4833, 113.0333],
+                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_3465b7633b3d2c77600ef8f3e778ac17 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_2b96bcaa56134e241526634ac388e710 = $(`<div id="html_2b96bcaa56134e241526634ac388e710" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>嵩山</b><br>申报年份：2004<br>批次：2004-2009</div></div>`)[0];
+                popup_3465b7633b3d2c77600ef8f3e778ac17.setContent(html_2b96bcaa56134e241526634ac388e710);
+            
+        
+
+        circle_marker_5a1d95ebdb62bdd80b154bc63aabfe5a.bindPopup(popup_3465b7633b3d2c77600ef8f3e778ac17)
+        ;
+
+        
+    
+    
+            var marker_32b2b6a1d1b7337fd910a462497e5c71 = L.marker(
+                [34.4833, 113.0333],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_3f826d69a4b65aeab35d8d1da3be5f58 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u5d69\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_32b2b6a1d1b7337fd910a462497e5c71.setIcon(div_icon_3f826d69a4b65aeab35d8d1da3be5f58);
+            
+    
+            var circle_marker_18f2d5ad2f07d6700ee67b8a70248156 = L.circleMarker(
+                [35.0833, 112.0833],
+                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_164582c90aae8a3c3163a4bd93a0c17d = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_f221c37a42d9053add2880d0c8a52244 = $(`<div id="html_f221c37a42d9053add2880d0c8a52244" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>王屋山-黛眉山</b><br>申报年份：2006<br>批次：2004-2009</div></div>`)[0];
+                popup_164582c90aae8a3c3163a4bd93a0c17d.setContent(html_f221c37a42d9053add2880d0c8a52244);
+            
+        
+
+        circle_marker_18f2d5ad2f07d6700ee67b8a70248156.bindPopup(popup_164582c90aae8a3c3163a4bd93a0c17d)
+        ;
+
+        
+    
+    
+            var marker_21a18c65ba7027fc14faac422ea8e47b = L.marker(
+                [35.0833, 112.0833],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_fb5cecf56cde02a2e8f7378ddb1ec1bc = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u738b\u5c4b\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_21a18c65ba7027fc14faac422ea8e47b.setIcon(div_icon_fb5cecf56cde02a2e8f7378ddb1ec1bc);
+            
+    
+            var circle_marker_1b9fefff10febe674a4103ccfa875ea5 = L.circleMarker(
+                [33.7667, 111.9333],
+                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_a2499dbec8214828a10c7b8b76d6705b = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_a307a72447fd532c6b234b33a5afddbe = $(`<div id="html_a307a72447fd532c6b234b33a5afddbe" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>伏牛山</b><br>申报年份：2006<br>批次：2004-2009</div></div>`)[0];
+                popup_a2499dbec8214828a10c7b8b76d6705b.setContent(html_a307a72447fd532c6b234b33a5afddbe);
+            
+        
+
+        circle_marker_1b9fefff10febe674a4103ccfa875ea5.bindPopup(popup_a2499dbec8214828a10c7b8b76d6705b)
+        ;
+
+        
+    
+    
+            var marker_386d632eb406b7a9e4002bbe4d032e46 = L.marker(
+                [33.7667, 111.9333],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_864e9aeb3a03c3ddb6d00cdb8bca5bf0 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u4f0f\u725b\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_386d632eb406b7a9e4002bbe4d032e46.setIcon(div_icon_864e9aeb3a03c3ddb6d00cdb8bca5bf0);
+            
+    
+            var circle_marker_64916c74f3dec856d404518537e5f01b = L.circleMarker(
+                [48.7167, 126.0833],
+                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_eff914903e149c39444bce357afeb3a0 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_3fdf846776c220b4cd5c92083a40d8ea = $(`<div id="html_3fdf846776c220b4cd5c92083a40d8ea" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>五大连池</b><br>申报年份：2004<br>批次：2004-2009</div></div>`)[0];
+                popup_eff914903e149c39444bce357afeb3a0.setContent(html_3fdf846776c220b4cd5c92083a40d8ea);
+            
+        
+
+        circle_marker_64916c74f3dec856d404518537e5f01b.bindPopup(popup_eff914903e149c39444bce357afeb3a0)
+        ;
+
+        
+    
+    
+            var marker_ef2ccd6092917841b8ce251f2a4c6972 = L.marker(
+                [48.7167, 126.0833],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_87d4c08c65a33f1a3ba3db2a9691bdf7 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u4e94\u5927\u8fde\u6c60\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_ef2ccd6092917841b8ce251f2a4c6972.setIcon(div_icon_87d4c08c65a33f1a3ba3db2a9691bdf7);
+            
+    
+            var circle_marker_022e7317a4c4d60ac4b07b2888aeafdb = L.circleMarker(
+                [43.9167, 128.9667],
+                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_1c05f3ee06cb4936f3a3e03afe956169 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_21c12b048361f99aa7cbea302c866a17 = $(`<div id="html_21c12b048361f99aa7cbea302c866a17" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>镜泊湖</b><br>申报年份：2006<br>批次：2004-2009</div></div>`)[0];
+                popup_1c05f3ee06cb4936f3a3e03afe956169.setContent(html_21c12b048361f99aa7cbea302c866a17);
+            
+        
+
+        circle_marker_022e7317a4c4d60ac4b07b2888aeafdb.bindPopup(popup_1c05f3ee06cb4936f3a3e03afe956169)
+        ;
+
+        
+    
+    
+            var marker_104227d4e7a47b169cec4dc97d076148 = L.marker(
+                [43.9167, 128.9667],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_53b48aa16fca64895006055b16d0256d = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u955c\u6cca\u6e56\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_104227d4e7a47b169cec4dc97d076148.setIcon(div_icon_53b48aa16fca64895006055b16d0256d);
+            
+    
+            var circle_marker_d52b3270c1bdd3dd3a707ad59c5d8396 = L.circleMarker(
+                [31.75, 110.4],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_da35ed01f9f435927d4ad8878ceebc84 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_5cf1d9d282c2f9caf12324727fa06b95 = $(`<div id="html_5cf1d9d282c2f9caf12324727fa06b95" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>神农架</b><br>申报年份：2013<br>批次：2010-2019</div></div>`)[0];
+                popup_da35ed01f9f435927d4ad8878ceebc84.setContent(html_5cf1d9d282c2f9caf12324727fa06b95);
+            
+        
+
+        circle_marker_d52b3270c1bdd3dd3a707ad59c5d8396.bindPopup(popup_da35ed01f9f435927d4ad8878ceebc84)
+        ;
+
+        
+    
+    
+            var marker_e223ac0e58df25cf9a75901e7da0d3d7 = L.marker(
+                [31.75, 110.4],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_20f70e2e75d790d6a3506d3470fd4e1f = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u795e\u519c\u67b6\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_e223ac0e58df25cf9a75901e7da0d3d7.setIcon(div_icon_20f70e2e75d790d6a3506d3470fd4e1f);
+            
+    
+            var circle_marker_e6264c0398bb02528f28e8fb69c61df8 = L.circleMarker(
+                [30.3, 109.4833],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_a72964fc6956a13d19d054c3d4adf5ed = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_55a499a5173123aa9aad46b88b4c8cf3 = $(`<div id="html_55a499a5173123aa9aad46b88b4c8cf3" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>恩施大峡谷-腾龙洞</b><br>申报年份：2015<br>批次：2010-2019</div></div>`)[0];
+                popup_a72964fc6956a13d19d054c3d4adf5ed.setContent(html_55a499a5173123aa9aad46b88b4c8cf3);
+            
+        
+
+        circle_marker_e6264c0398bb02528f28e8fb69c61df8.bindPopup(popup_a72964fc6956a13d19d054c3d4adf5ed)
+        ;
+
+        
+    
+    
+            var marker_665535af5da13721461cb5abe30d8c81 = L.marker(
+                [30.3, 109.4833],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_deb1431c7215278d9db3a2d55b5e3a87 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u6069\u65bd\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_665535af5da13721461cb5abe30d8c81.setIcon(div_icon_deb1431c7215278d9db3a2d55b5e3a87);
+            
+    
+            var circle_marker_e70fd70162b86a1d31f54eb199389086 = L.circleMarker(
+                [29.3167, 110.4667],
+                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_521b2921b7e449c8594d2fbe9f265248 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_bb2023c5f730657a66e3d3c7dbae4d2f = $(`<div id="html_bb2023c5f730657a66e3d3c7dbae4d2f" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>张家界</b><br>申报年份：2004<br>批次：2004-2009</div></div>`)[0];
+                popup_521b2921b7e449c8594d2fbe9f265248.setContent(html_bb2023c5f730657a66e3d3c7dbae4d2f);
+            
+        
+
+        circle_marker_e70fd70162b86a1d31f54eb199389086.bindPopup(popup_521b2921b7e449c8594d2fbe9f265248)
+        ;
+
+        
+    
+    
+            var marker_e921057f0d2db42bf7b182e24a4db585 = L.marker(
+                [29.3167, 110.4667],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_181653cfc871db1df8419a85d948d48c = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u5f20\u5bb6\u754c\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_e921057f0d2db42bf7b182e24a4db585.setIcon(div_icon_181653cfc871db1df8419a85d948d48c);
+            
+    
+            var circle_marker_ee8776c90b407325f9550165193b052a = L.circleMarker(
+                [28.3333, 109.7333],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_6dd566a3638e24c8e0c5b70edacfc678 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_0f1a7061516b7d3858c3bba7b45e68bb = $(`<div id="html_0f1a7061516b7d3858c3bba7b45e68bb" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>湘西</b><br>申报年份：2011<br>批次：2010-2019</div></div>`)[0];
+                popup_6dd566a3638e24c8e0c5b70edacfc678.setContent(html_0f1a7061516b7d3858c3bba7b45e68bb);
+            
+        
+
+        circle_marker_ee8776c90b407325f9550165193b052a.bindPopup(popup_6dd566a3638e24c8e0c5b70edacfc678)
+        ;
+
+        
+    
+    
+            var marker_06b7ddd3a93d4597bb75130ddeff218b = L.marker(
+                [28.3333, 109.7333],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_be3035c0c8d394a4c66a911b261d77e5 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u6e58\u897f\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_06b7ddd3a93d4597bb75130ddeff218b.setIcon(div_icon_be3035c0c8d394a4c66a911b261d77e5);
+            
+    
+            var circle_marker_64005f4443d5de1fdb686e7cd47a1aed = L.circleMarker(
+                [42.0, 128.05],
+                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_b99249dbf42ab9a22e5d81224dafb698 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_de4898f71852ba5a219c920bf63c8a77 = $(`<div id="html_de4898f71852ba5a219c920bf63c8a77" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>长白山</b><br>申报年份：2004<br>批次：2004-2009</div></div>`)[0];
+                popup_b99249dbf42ab9a22e5d81224dafb698.setContent(html_de4898f71852ba5a219c920bf63c8a77);
+            
+        
+
+        circle_marker_64005f4443d5de1fdb686e7cd47a1aed.bindPopup(popup_b99249dbf42ab9a22e5d81224dafb698)
+        ;
+
+        
+    
+    
+            var marker_240d025b59de13c3955c918f56ca861e = L.marker(
+                [42.0, 128.05],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_d6bcc660c1aeff23a22a6dbd35ab8ea3 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u957f\u767d\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_240d025b59de13c3955c918f56ca861e.setIcon(div_icon_d6bcc660c1aeff23a22a6dbd35ab8ea3);
+            
+    
+            var circle_marker_45b2c0a40c97d0ee2bbf877804843de0 = L.circleMarker(
+                [29.4333, 115.9833],
+                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_cf53276bd08cc53ab0de75ceb110a828 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_43d52d90e87905c4cfec26b6b5103466 = $(`<div id="html_43d52d90e87905c4cfec26b6b5103466" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>庐山</b><br>申报年份：2004<br>批次：2004-2009</div></div>`)[0];
+                popup_cf53276bd08cc53ab0de75ceb110a828.setContent(html_43d52d90e87905c4cfec26b6b5103466);
+            
+        
+
+        circle_marker_45b2c0a40c97d0ee2bbf877804843de0.bindPopup(popup_cf53276bd08cc53ab0de75ceb110a828)
+        ;
+
+        
+    
+    
+            var marker_96b83acd0e757ffb16e1d768462f6b9d = L.marker(
+                [29.4333, 115.9833],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_166dc5c0292efd83a294d0a8ed5883d2 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u5e90\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_96b83acd0e757ffb16e1d768462f6b9d.setIcon(div_icon_166dc5c0292efd83a294d0a8ed5883d2);
+            
+    
+            var circle_marker_205803a21a11a4f4eae84b046586c31f = L.circleMarker(
+                [28.1667, 117.0167],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_f6504f796acff33b3bc6e71fd1307bce = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_0bf4cadb1483cb298124106a5bd13c1f = $(`<div id="html_0bf4cadb1483cb298124106a5bd13c1f" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>龙虎山</b><br>申报年份：2010<br>批次：2010-2019</div></div>`)[0];
+                popup_f6504f796acff33b3bc6e71fd1307bce.setContent(html_0bf4cadb1483cb298124106a5bd13c1f);
+            
+        
+
+        circle_marker_205803a21a11a4f4eae84b046586c31f.bindPopup(popup_f6504f796acff33b3bc6e71fd1307bce)
+        ;
+
+        
+    
+    
+            var marker_c1311b2ea407ecd7a9c3bf788d0be2e2 = L.marker(
+                [28.1667, 117.0167],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_f0895d6e14a4f64641fa14360680f3f3 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u9f99\u864e\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_c1311b2ea407ecd7a9c3bf788d0be2e2.setIcon(div_icon_f0895d6e14a4f64641fa14360680f3f3);
+            
+    
+            var circle_marker_a268f3ae0c6c6f3a139d03b0aa8429b7 = L.circleMarker(
+                [28.9167, 118.05],
+                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_b5f5f7bda39d42f555c3c4ed5b40a08f = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_e7829a57c306defb7aff2a786a5d7a02 = $(`<div id="html_e7829a57c306defb7aff2a786a5d7a02" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>三清山</b><br>申报年份：2008<br>批次：2004-2009</div></div>`)[0];
+                popup_b5f5f7bda39d42f555c3c4ed5b40a08f.setContent(html_e7829a57c306defb7aff2a786a5d7a02);
+            
+        
+
+        circle_marker_a268f3ae0c6c6f3a139d03b0aa8429b7.bindPopup(popup_b5f5f7bda39d42f555c3c4ed5b40a08f)
+        ;
+
+        
+    
+    
+            var marker_afbe3346ec64592ddd9cd6635a52b1e1 = L.marker(
+                [28.9167, 118.05],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_2583819ac30a6461fbdf997d00d4a691 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u4e09\u6e05\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_afbe3346ec64592ddd9cd6635a52b1e1.setIcon(div_icon_2583819ac30a6461fbdf997d00d4a691);
+            
+    
+            var circle_marker_cc5e4d3daa2294e2c53bfbd30c122695 = L.circleMarker(
+                [27.4667, 114.15],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_7025038baf7c125330a030c7221bc968 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_26d8d5817d76ea6b27111c1026145b05 = $(`<div id="html_26d8d5817d76ea6b27111c1026145b05" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>武功山</b><br>申报年份：2017<br>批次：2010-2019</div></div>`)[0];
+                popup_7025038baf7c125330a030c7221bc968.setContent(html_26d8d5817d76ea6b27111c1026145b05);
+            
+        
+
+        circle_marker_cc5e4d3daa2294e2c53bfbd30c122695.bindPopup(popup_7025038baf7c125330a030c7221bc968)
+        ;
+
+        
+    
+    
+            var marker_6ae3e939e0fc547a389c4d9da6da5551 = L.marker(
+                [27.4667, 114.15],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_4c6e9072cbc8fc5375028cf769f0d28c = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u6b66\u529f\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_6ae3e939e0fc547a389c4d9da6da5551.setIcon(div_icon_4c6e9072cbc8fc5375028cf769f0d28c);
+            
+    
+            var circle_marker_e52416302a63287927cf943c37366421 = L.circleMarker(
+                [43.25, 117.5],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_5b00e42288678f083610567af126f931 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_01cd8815c281f709549b92845e2fea1f = $(`<div id="html_01cd8815c281f709549b92845e2fea1f" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>克什克腾</b><br>申报年份：2010<br>批次：2010-2019</div></div>`)[0];
+                popup_5b00e42288678f083610567af126f931.setContent(html_01cd8815c281f709549b92845e2fea1f);
+            
+        
+
+        circle_marker_e52416302a63287927cf943c37366421.bindPopup(popup_5b00e42288678f083610567af126f931)
+        ;
+
+        
+    
+    
+            var marker_028b6145fd18445cf5c850e8421377c3 = L.marker(
+                [43.25, 117.5],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_5ea0d41471c59d89964c4c1ca491a0c8 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u514b\u4ec0\u514b\u817e\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_028b6145fd18445cf5c850e8421377c3.setIcon(div_icon_5ea0d41471c59d89964c4c1ca491a0c8);
+            
+    
+            var circle_marker_1e3be56c10752f476d7d4fdb0144201d = L.circleMarker(
+                [47.1833, 119.95],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_e8408fa737085f50306ad4fc161398c8 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4e13c28b4cb5dbd136d82aa8c144494b = $(`<div id="html_4e13c28b4cb5dbd136d82aa8c144494b" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>阿尔山</b><br>申报年份：2017<br>批次：2010-2019</div></div>`)[0];
+                popup_e8408fa737085f50306ad4fc161398c8.setContent(html_4e13c28b4cb5dbd136d82aa8c144494b);
+            
+        
+
+        circle_marker_1e3be56c10752f476d7d4fdb0144201d.bindPopup(popup_e8408fa737085f50306ad4fc161398c8)
+        ;
+
+        
+    
+    
+            var marker_7665223eb8dcc7a028843c83fb7cc863 = L.marker(
+                [47.1833, 119.95],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_c043e4d6cf08e163430011f13d473237 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u963f\u5c14\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_7665223eb8dcc7a028843c83fb7cc863.setIcon(div_icon_c043e4d6cf08e163430011f13d473237);
+            
+    
+            var circle_marker_0a266d2e32062a0a33daa024d6643f8e = L.circleMarker(
+                [40.1167, 101.6667],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_66cb75bf461693db0b7bb19b4516fdaf = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_d9a1b7f84b031100860429a47581b213 = $(`<div id="html_d9a1b7f84b031100860429a47581b213" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>阿拉善沙漠</b><br>申报年份：2012<br>批次：2010-2019</div></div>`)[0];
+                popup_66cb75bf461693db0b7bb19b4516fdaf.setContent(html_d9a1b7f84b031100860429a47581b213);
+            
+        
+
+        circle_marker_0a266d2e32062a0a33daa024d6643f8e.bindPopup(popup_66cb75bf461693db0b7bb19b4516fdaf)
+        ;
+
+        
+    
+    
+            var marker_5c3cf420d37f360cf1ada44964756eed = L.marker(
+                [40.1167, 101.6667],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_84011b7b6067313f81e229c2bc17e77f = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u963f\u62c9\u5584\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_5c3cf420d37f360cf1ada44964756eed.setIcon(div_icon_84011b7b6067313f81e229c2bc17e77f);
+            
+    
+            var circle_marker_e4d2e54146467d55b7768abf7fadde63 = L.circleMarker(
+                [36.0667, 101.8],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_7397ada068d551c17deb92db9e962a6e = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_3e0135aefcba0a7959ae7974b0b4375b = $(`<div id="html_3e0135aefcba0a7959ae7974b0b4375b" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>坎布拉</b><br>申报年份：2012<br>批次：2010-2019</div></div>`)[0];
+                popup_7397ada068d551c17deb92db9e962a6e.setContent(html_3e0135aefcba0a7959ae7974b0b4375b);
+            
+        
+
+        circle_marker_e4d2e54146467d55b7768abf7fadde63.bindPopup(popup_7397ada068d551c17deb92db9e962a6e)
+        ;
+
+        
+    
+    
+            var marker_463957930058fea6ab7dade6fb5e3b13 = L.marker(
+                [36.0667, 101.8],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_a14fb49437f195ab4483935f21cca8ee = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u574e\u5e03\u62c9\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_463957930058fea6ab7dade6fb5e3b13.setIcon(div_icon_a14fb49437f195ab4483935f21cca8ee);
+            
+    
+            var circle_marker_283c5621915a8d3905495ce94846b8ef = L.circleMarker(
+                [35.8667, 94.1667],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_afbf618118a2536a7311d13a2cc55330 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_3ebb838b6088944ffde2d5b1cf782179 = $(`<div id="html_3ebb838b6088944ffde2d5b1cf782179" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>昆仑山</b><br>申报年份：2015<br>批次：2010-2019</div></div>`)[0];
+                popup_afbf618118a2536a7311d13a2cc55330.setContent(html_3ebb838b6088944ffde2d5b1cf782179);
+            
+        
+
+        circle_marker_283c5621915a8d3905495ce94846b8ef.bindPopup(popup_afbf618118a2536a7311d13a2cc55330)
+        ;
+
+        
+    
+    
+            var marker_129bc140b5c295864a7460998dae4a2c = L.marker(
+                [35.8667, 94.1667],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_a4d6c7bc0c2c0540d7b65443a0fdfb78 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u6606\u4ed1\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_129bc140b5c295864a7460998dae4a2c.setIcon(div_icon_a4d6c7bc0c2c0540d7b65443a0fdfb78);
+            
+    
+            var circle_marker_0afba801cf6fd8e03610f0cbac9ad77f = L.circleMarker(
+                [36.25, 117.1],
+                {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_c0551283112feae2bf230af492c45fac = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_54e83c104d972df6f7cb614048e98bcb = $(`<div id="html_54e83c104d972df6f7cb614048e98bcb" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>泰山</b><br>申报年份：2006<br>批次：2004-2009</div></div>`)[0];
+                popup_c0551283112feae2bf230af492c45fac.setContent(html_54e83c104d972df6f7cb614048e98bcb);
+            
+        
+
+        circle_marker_0afba801cf6fd8e03610f0cbac9ad77f.bindPopup(popup_c0551283112feae2bf230af492c45fac)
+        ;
+
+        
+    
+    
+            var marker_4d2338cac968768dca2ef4a4be290237 = L.marker(
+                [36.25, 117.1],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_d3237b3c832e8fc71f5ad8eeb09a6964 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u6cf0\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_4d2338cac968768dca2ef4a4be290237.setIcon(div_icon_d3237b3c832e8fc71f5ad8eeb09a6964);
+            
+    
+            var circle_marker_4628c1002bb5a772a5116f4cf7dc0c8c = L.circleMarker(
+                [35.3167, 117.9833],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_624230ca701a1a9e2367105280f5600a = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_f7f2e8bc0767889c3c88bca74d2c825e = $(`<div id="html_f7f2e8bc0767889c3c88bca74d2c825e" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>沂蒙山</b><br>申报年份：2011<br>批次：2010-2019</div></div>`)[0];
+                popup_624230ca701a1a9e2367105280f5600a.setContent(html_f7f2e8bc0767889c3c88bca74d2c825e);
+            
+        
+
+        circle_marker_4628c1002bb5a772a5116f4cf7dc0c8c.bindPopup(popup_624230ca701a1a9e2367105280f5600a)
+        ;
+
+        
+    
+    
+            var marker_33a859b7c75096d66ecc40981c2e2351 = L.marker(
+                [35.3167, 117.9833],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_4456ba591c5619e1db7d0a6067996801 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u6c82\u8499\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_33a859b7c75096d66ecc40981c2e2351.setIcon(div_icon_4456ba591c5619e1db7d0a6067996801);
+            
+    
+            var circle_marker_c60f1b329eb91c563b31c58f80d978b2 = L.circleMarker(
+                [34.0167, 108.9667],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_e3c61ce16e41aeeb4fc876e315dc9851 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_733bbcbae01a2e07da0b1c566f636469 = $(`<div id="html_733bbcbae01a2e07da0b1c566f636469" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>秦岭终南山</b><br>申报年份：2011<br>批次：2010-2019</div></div>`)[0];
+                popup_e3c61ce16e41aeeb4fc876e315dc9851.setContent(html_733bbcbae01a2e07da0b1c566f636469);
+            
+        
+
+        circle_marker_c60f1b329eb91c563b31c58f80d978b2.bindPopup(popup_e3c61ce16e41aeeb4fc876e315dc9851)
+        ;
+
+        
+    
+    
+            var marker_7e5d68506a664d0901078a1e7335d083 = L.marker(
+                [34.0167, 108.9667],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_ee3ba5bf595799a9fb4539833a41fdee = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u7ec8\u5357\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_7e5d68506a664d0901078a1e7335d083.setIcon(div_icon_ee3ba5bf595799a9fb4539833a41fdee);
+            
+    
+            var circle_marker_67b1c29a1ee22b53d2cdf1cc2d9a5824 = L.circleMarker(
+                [40.1333, 94.7],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_5a01d44ab978045808d06bad39876886 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_0533d11af26cdb26ffd16271aa74feb7 = $(`<div id="html_0533d11af26cdb26ffd16271aa74feb7" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>敦煌</b><br>申报年份：2015<br>批次：2010-2019</div></div>`)[0];
+                popup_5a01d44ab978045808d06bad39876886.setContent(html_0533d11af26cdb26ffd16271aa74feb7);
+            
+        
+
+        circle_marker_67b1c29a1ee22b53d2cdf1cc2d9a5824.bindPopup(popup_5a01d44ab978045808d06bad39876886)
+        ;
+
+        
+    
+    
+            var marker_48f9a53796f5283985a96716dd434727 = L.marker(
+                [40.1333, 94.7],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_d8c868fbfa752692c95bcf2311fd2d5e = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u6566\u714c\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_48f9a53796f5283985a96716dd434727.setIcon(div_icon_d8c868fbfa752692c95bcf2311fd2d5e);
+            
+    
+            var circle_marker_c396b551c8b7ab9901ce28cbd1be2280 = L.circleMarker(
+                [38.9167, 100.45],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_22b0d07c0e1d81668c1419013bd1f59d = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_bab4ce129f036aa23d24ef20e6398fc3 = $(`<div id="html_bab4ce129f036aa23d24ef20e6398fc3" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>张掖</b><br>申报年份：2019<br>批次：2010-2019</div></div>`)[0];
+                popup_22b0d07c0e1d81668c1419013bd1f59d.setContent(html_bab4ce129f036aa23d24ef20e6398fc3);
+            
+        
+
+        circle_marker_c396b551c8b7ab9901ce28cbd1be2280.bindPopup(popup_22b0d07c0e1d81668c1419013bd1f59d)
+        ;
+
+        
+    
+    
+            var marker_a778825550e4815ed6de0d0ea13d448e = L.marker(
+                [38.9167, 100.45],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_9816c0e38f6b7ad9dd48619e89457654 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u5f20\u6396\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_a778825550e4815ed6de0d0ea13d448e.setIcon(div_icon_9816c0e38f6b7ad9dd48619e89457654);
+            
+    
+            var circle_marker_e118e5adf49be44fa051db803ae17bf7 = L.circleMarker(
+                [35.6, 103.2],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_a05d6d056ba177188f2de765b53fc07b = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_13917bf43f56d7f8473b3faff404f85d = $(`<div id="html_13917bf43f56d7f8473b3faff404f85d" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>临夏</b><br>申报年份：2020<br>批次：2020-2025</div></div>`)[0];
+                popup_a05d6d056ba177188f2de765b53fc07b.setContent(html_13917bf43f56d7f8473b3faff404f85d);
+            
+        
+
+        circle_marker_e118e5adf49be44fa051db803ae17bf7.bindPopup(popup_a05d6d056ba177188f2de765b53fc07b)
+        ;
+
+        
+    
+    
+            var marker_e4282cae455061a2b75e34d6b440f717 = L.marker(
+                [35.6, 103.2],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_48f8ba66fe344f79d5542e30225e95c2 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u4e34\u590f\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_e4282cae455061a2b75e34d6b440f717.setIcon(div_icon_48f8ba66fe344f79d5542e30225e95c2);
+            
+    
+            var circle_marker_c7440884d66eadf18c4c6f605b0142a2 = L.circleMarker(
+                [28.3167, 105.1167],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_b1e8e65716460f654f9f40daed72fe5d = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_b175f7f791462baebb4ffcfac1449376 = $(`<div id="html_b175f7f791462baebb4ffcfac1449376" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>兴文</b><br>申报年份：2021<br>批次：2020-2025</div></div>`)[0];
+                popup_b1e8e65716460f654f9f40daed72fe5d.setContent(html_b175f7f791462baebb4ffcfac1449376);
+            
+        
+
+        circle_marker_c7440884d66eadf18c4c6f605b0142a2.bindPopup(popup_b1e8e65716460f654f9f40daed72fe5d)
+        ;
+
+        
+    
+    
+            var marker_dea73df903335f1cfc2ab95e8188001e = L.marker(
+                [28.3167, 105.1167],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_e04a8b73ddf39fcd251948eef91433a3 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u5174\u6587\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_dea73df903335f1cfc2ab95e8188001e.setIcon(div_icon_e04a8b73ddf39fcd251948eef91433a3);
+            
+    
+            var circle_marker_c6c6cd81f7f0e6f1583e7a47cd8f917c = L.circleMarker(
+                [29.3667, 104.7667],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_348df54c8e28cdbe25b196dd9a814454 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_6132202852935d3cefcbc506d28ec3dd = $(`<div id="html_6132202852935d3cefcbc506d28ec3dd" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>自贡</b><br>申报年份：2022<br>批次：2020-2025</div></div>`)[0];
+                popup_348df54c8e28cdbe25b196dd9a814454.setContent(html_6132202852935d3cefcbc506d28ec3dd);
+            
+        
+
+        circle_marker_c6c6cd81f7f0e6f1583e7a47cd8f917c.bindPopup(popup_348df54c8e28cdbe25b196dd9a814454)
+        ;
+
+        
+    
+    
+            var marker_75f9825b20d6825ea13faa5cc53b13b9 = L.marker(
+                [29.3667, 104.7667],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_c3982c943dce2735f99a2cc4920e2b73 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u81ea\u8d21\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_75f9825b20d6825ea13faa5cc53b13b9.setIcon(div_icon_c3982c943dce2735f99a2cc4920e2b73);
+            
+    
+            var circle_marker_d6691b12f9bbbe08a09862c21c488027 = L.circleMarker(
+                [32.5, 107.05],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_4c2f3e3c9fc3f597e8ab58dc21d5f7f0 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_d97f63eb799548971c0b6722c104876d = $(`<div id="html_d97f63eb799548971c0b6722c104876d" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>光雾山-诺水河</b><br>申报年份：2023<br>批次：2020-2025</div></div>`)[0];
+                popup_4c2f3e3c9fc3f597e8ab58dc21d5f7f0.setContent(html_d97f63eb799548971c0b6722c104876d);
+            
+        
+
+        circle_marker_d6691b12f9bbbe08a09862c21c488027.bindPopup(popup_4c2f3e3c9fc3f597e8ab58dc21d5f7f0)
+        ;
+
+        
+    
+    
+            var marker_fac0651cb4ee6535c96d8de21ab74861 = L.marker(
+                [32.5, 107.05],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_a49c36d05f7bb06d66326547d69e93fa = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u5149\u96fe\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_fac0651cb4ee6535c96d8de21ab74861.setIcon(div_icon_a49c36d05f7bb06d66326547d69e93fa);
+            
+    
+            var regular_polygon_marker_4c1af3b363b8edbd32d5b3001e596ec9 = new L.RegularPolygonMarker(
+                [31.1, 103.2167],
+                {
+  "stroke": true,
+  "color": "#c0392b",
+  "weight": 1.5,
+  "opacity": 1.0,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "#c0392b",
+  "fillOpacity": 0.9,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "radius": 6,
+  "numberOfSides": 5,
+  "rotation": 0,
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_c8082b9428a66253fe494d18bf8d0c67 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_52b545d6fe11d8241eabb91dbb333002 = $(`<div id="html_52b545d6fe11d8241eabb91dbb333002" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b style='color:#c0392b;'>【2026新增】四姑娘山</b><br>申报年份：2026<br>批次：2026</div></div>`)[0];
+                popup_c8082b9428a66253fe494d18bf8d0c67.setContent(html_52b545d6fe11d8241eabb91dbb333002);
+            
+        
+
+        regular_polygon_marker_4c1af3b363b8edbd32d5b3001e596ec9.bindPopup(popup_c8082b9428a66253fe494d18bf8d0c67)
+        ;
+
+        
+    
+    
+            var marker_2419d0678b92ce9a9313aba0562c90dd = L.marker(
+                [31.1, 103.2167],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_7d9af6fbfdaa563cc579de9b05a2f8d6 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: bold;\n                border: 1px solid #c0392b;\n            \"\u003e\u56db\u59d1\u5a18\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_2419d0678b92ce9a9313aba0562c90dd.setIcon(div_icon_7d9af6fbfdaa563cc579de9b05a2f8d6);
+            
+    
+            var circle_marker_1aa9368c02c70efefa0bfb12aff694b4 = L.circleMarker(
+                [22.3333, 114.15],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_069f7351108331e5aed7ea329c0eeb90 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_1821f6bc18b420232c6f815c4aa0d173 = $(`<div id="html_1821f6bc18b420232c6f815c4aa0d173" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>香港</b><br>申报年份：2024<br>批次：2020-2025</div></div>`)[0];
+                popup_069f7351108331e5aed7ea329c0eeb90.setContent(html_1821f6bc18b420232c6f815c4aa0d173);
+            
+        
+
+        circle_marker_1aa9368c02c70efefa0bfb12aff694b4.bindPopup(popup_069f7351108331e5aed7ea329c0eeb90)
+        ;
+
+        
+    
+    
+            var marker_49e3d20049f9a6a5acca1688702a4058 = L.marker(
+                [22.3333, 114.15],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_62e99c125b8c91b65164c44652840fc8 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u9999\u6e2f\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_49e3d20049f9a6a5acca1688702a4058.setIcon(div_icon_62e99c125b8c91b65164c44652840fc8);
+            
+    
+            var circle_marker_000f48ed0aa5b051d98eb99f71062a24 = L.circleMarker(
+                [47.2167, 89.8167],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_1ae2899e76c61340ed3da8a82aa2378e = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_857238fa4b56a1749bdaf4b1dd4c4262 = $(`<div id="html_857238fa4b56a1749bdaf4b1dd4c4262" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>可可托海</b><br>申报年份：2025<br>批次：2020-2025</div></div>`)[0];
+                popup_1ae2899e76c61340ed3da8a82aa2378e.setContent(html_857238fa4b56a1749bdaf4b1dd4c4262);
+            
+        
+
+        circle_marker_000f48ed0aa5b051d98eb99f71062a24.bindPopup(popup_1ae2899e76c61340ed3da8a82aa2378e)
+        ;
+
+        
+    
+    
+            var marker_62257f26f955c393c07792d6047dbe6b = L.marker(
+                [47.2167, 89.8167],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_53e1ff6d9528c2565b61789ac9ca1e70 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u53ef\u53ef\u6258\u6d77\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_62257f26f955c393c07792d6047dbe6b.setIcon(div_icon_53e1ff6d9528c2565b61789ac9ca1e70);
+            
+    
+            var circle_marker_48bd6c4a43f4668ded1eb14f1a8eb8a8 = L.circleMarker(
+                [24.7833, 103.2833],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_da62be628bd38a99cc0ce6716cbc9bfa = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_bb5b7636d109346c490d6b85baf4550f = $(`<div id="html_bb5b7636d109346c490d6b85baf4550f" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>石林</b><br>申报年份：2024<br>批次：2020-2025</div></div>`)[0];
+                popup_da62be628bd38a99cc0ce6716cbc9bfa.setContent(html_bb5b7636d109346c490d6b85baf4550f);
+            
+        
+
+        circle_marker_48bd6c4a43f4668ded1eb14f1a8eb8a8.bindPopup(popup_da62be628bd38a99cc0ce6716cbc9bfa)
+        ;
+
+        
+    
+    
+            var marker_4b18e6d620e02f0a87a779449eae7c14 = L.marker(
+                [24.7833, 103.2833],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_7682256d09c0ce91edec5630963d419d = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u77f3\u6797\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_4b18e6d620e02f0a87a779449eae7c14.setIcon(div_icon_7682256d09c0ce91edec5630963d419d);
+            
+    
+            var circle_marker_84493ef863764145f26c36b6206c6791 = L.circleMarker(
+                [25.7, 100.2667],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_58eda0bae1f527d7081b93cd4d3064dd = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_49c283ff691dce5af94679215078be32 = $(`<div id="html_49c283ff691dce5af94679215078be32" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>大理苍山</b><br>申报年份：2025<br>批次：2020-2025</div></div>`)[0];
+                popup_58eda0bae1f527d7081b93cd4d3064dd.setContent(html_49c283ff691dce5af94679215078be32);
+            
+        
+
+        circle_marker_84493ef863764145f26c36b6206c6791.bindPopup(popup_58eda0bae1f527d7081b93cd4d3064dd)
+        ;
+
+        
+    
+    
+            var marker_33c235ecf17619bb06b55bfca6d762cd = L.marker(
+                [25.7, 100.2667],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_a6cb18e6f4807da9a8539a8a44658fb2 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u5927\u7406\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_33c235ecf17619bb06b55bfca6d762cd.setIcon(div_icon_a6cb18e6f4807da9a8539a8a44658fb2);
+            
+    
+            var circle_marker_1772c890be81f711bceabccc851576df = L.circleMarker(
+                [28.3667, 120.9833],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_0d0a0f878da0316e6b96971affa46ae0 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_3dff20e9c3a9d585823cad848cf0d42d = $(`<div id="html_3dff20e9c3a9d585823cad848cf0d42d" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>雁荡山</b><br>申报年份：2024<br>批次：2020-2025</div></div>`)[0];
+                popup_0d0a0f878da0316e6b96971affa46ae0.setContent(html_3dff20e9c3a9d585823cad848cf0d42d);
+            
+        
+
+        circle_marker_1772c890be81f711bceabccc851576df.bindPopup(popup_0d0a0f878da0316e6b96971affa46ae0)
+        ;
+
+        
+    
+    
+            var marker_659a897e61f9309f88231cd067553b5f = L.marker(
+                [28.3667, 120.9833],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_570a50225a3e4c12230af55153321356 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u96c1\u8361\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_659a897e61f9309f88231cd067553b5f.setIcon(div_icon_570a50225a3e4c12230af55153321356);
+            
+    
+            var regular_polygon_marker_50ae85023b0f6e11ded094a1dd1ea3e2 = new L.RegularPolygonMarker(
+                [28.9, 118.5],
+                {
+  "stroke": true,
+  "color": "#c0392b",
+  "weight": 1.5,
+  "opacity": 1.0,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "#c0392b",
+  "fillOpacity": 0.9,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "radius": 6,
+  "numberOfSides": 5,
+  "rotation": 0,
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_0e4f50ad14d7953985350ecec466d200 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_961ea0b82926114ff1a796c20afd9ace = $(`<div id="html_961ea0b82926114ff1a796c20afd9ace" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b style='color:#c0392b;'>【2026新增】常山</b><br>申报年份：2026<br>批次：2026</div></div>`)[0];
+                popup_0e4f50ad14d7953985350ecec466d200.setContent(html_961ea0b82926114ff1a796c20afd9ace);
+            
+        
+
+        regular_polygon_marker_50ae85023b0f6e11ded094a1dd1ea3e2.bindPopup(popup_0e4f50ad14d7953985350ecec466d200)
+        ;
+
+        
+    
+    
+            var marker_d4c219a7aec141b4775552e5d686810c = L.marker(
+                [28.9, 118.5],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_10f2631d75252accb957bf4b9c871948 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: bold;\n                border: 1px solid #c0392b;\n            \"\u003e\u5e38\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_d4c219a7aec141b4775552e5d686810c.setIcon(div_icon_10f2631d75252accb957bf4b9c871948);
+            
+    
+            var circle_marker_ccaa8a9a7c5d504d1c9541dd09fcf214 = L.circleMarker(
+                [30.75, 115.5],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_b33792d9bf49b7c675c54efd8bc14b3f = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_cc613a826636890897c5efc61287d4df = $(`<div id="html_cc613a826636890897c5efc61287d4df" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>黄冈大别山</b><br>申报年份：2018<br>批次：2010-2019</div></div>`)[0];
+                popup_b33792d9bf49b7c675c54efd8bc14b3f.setContent(html_cc613a826636890897c5efc61287d4df);
+            
+        
+
+        circle_marker_ccaa8a9a7c5d504d1c9541dd09fcf214.bindPopup(popup_b33792d9bf49b7c675c54efd8bc14b3f)
+        ;
+
+        
+    
+    
+            var marker_2039ceecd7b12ebff5bf1778bdc971b2 = L.marker(
+                [30.75, 115.5],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_00e7e882dfafc007b40db33c33025aca = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u5927\u522b\u5c71\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_2039ceecd7b12ebff5bf1778bdc971b2.setIcon(div_icon_00e7e882dfafc007b40db33c33025aca);
+            
+    
+            var circle_marker_3fcb55554c9717dd12f27cefb01fab7c = L.circleMarker(
+                [27.0833, 119.1667],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.5}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+        var popup_40480dd40d7e7bf45909a3584e12efe0 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_bfcfa5f7ffcc34363206193c50025917 = $(`<div id="html_bfcfa5f7ffcc34363206193c50025917" style="width: 100.0%; height: 100.0%;"><div style='font-family:Microsoft YaHei;'><b>宁德白水洋-鸳鸯溪</b><br>申报年份：2020<br>批次：2020-2025</div></div>`)[0];
+                popup_40480dd40d7e7bf45909a3584e12efe0.setContent(html_bfcfa5f7ffcc34363206193c50025917);
+            
+        
+
+        circle_marker_3fcb55554c9717dd12f27cefb01fab7c.bindPopup(popup_40480dd40d7e7bf45909a3584e12efe0)
+        ;
+
+        
+    
+    
+            var marker_c5ae94b9533463affaeba15bcafab0df = L.marker(
+                [27.0833, 119.1667],
+                {
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+        
+    
+            var div_icon_2cec6efdfee79505c0c101fb889a5039 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                font-size: 10px;\n                font-family: \u0027SimSun\u0027, \u0027Microsoft YaHei\u0027, serif;\n                color: #4a3728;\n                background-color: rgba(255,248,240,0.75);\n                padding: 1px 4px;\n                border-radius: 3px;\n                white-space: nowrap;\n                text-shadow: 0 0 2px #fff8f0;\n                font-weight: normal;\n                border: none;\n            \"\u003e\u767d\u6c34\u6d0b\u003c/div\u003e\n            ",
+  "iconSize": [60, 20],
+  "iconAnchor": [30, -8],
+  "className": "empty",
+});
+        
+    
+                marker_c5ae94b9533463affaeba15bcafab0df.setIcon(div_icon_2cec6efdfee79505c0c101fb889a5039);
+            
+    
+            var layer_control_b971a8cc189a90278074978add86f95e_layers = {
+                base_layers : {
+                    "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" : tile_layer_cb3f49f9b4c14d5af3f5b996aeeaa1c3,
+                    "\u5730\u5f62\u590d\u53e4" : tile_layer_770b9dc189d7da6e3788bdf1aa5e56ef,
+                    "\u6c34\u5f69\u590d\u53e4" : tile_layer_06b715a828eb8985d439d4794fe756af,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_b971a8cc189a90278074978add86f95e = L.control.layers(
+                layer_control_b971a8cc189a90278074978add86f95e_layers.base_layers,
+                layer_control_b971a8cc189a90278074978add86f95e_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_061dcd5e056c670199b01d534cf12576);
+
+        
+</script>
+</html>
